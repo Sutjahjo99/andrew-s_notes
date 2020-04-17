@@ -86,3 +86,148 @@
     </div>
 
 {% endblock content %}
+
+{% block sidebar_portfolio %}
+    <div class="content-section">
+        <h4><u>Education</u></h4>
+
+        <table>
+            <tr>
+                <td class="medium-text">Stony Brook University</td>
+                <td class="align-right"><small class="text-muted">New York</small></td>
+            </tr>
+            <tr>
+                <td colspan="2"><div class="dropdown-divider"></div></td>
+            </tr>
+            <tr>
+                <td colspan="2"><a class="school-link" href="https://www.stonybrook.edu/ceas/" target="_blank">College of Eng. and Applied Science</a></td>
+            </tr>
+            <tr>
+                <td><b>B.E.</b> Chemical Engineering<br></td>
+                <td class="align-right"><small class="text-muted">2017-2021</small></td>
+            </tr>
+            <tr>
+                <td colspan="2"><div class="dropdown-divider"></div></td>
+            </tr>
+            <tr>
+                <td colspan="2"><a class="school-link" href="https://www.stonybrook.edu/commcms/cas/" target="_blank">College of Arts and Science </a></td>
+            </tr>
+            <tr>
+                <td><b>B.A.</b> Chemistry <br></td>
+                <td class="align-right"> <small class="text-muted">2018-2021</small></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="content-section">
+        <h4><u>Hobbies</u></h4>
+
+        <!-------------------- Reading Hobby -------------------->
+        <ul>
+            <li>
+                Reading self-improvement books
+                <small><u>Recommendations</u></small>
+                <table>
+                    <tr>
+                        <td>1. Principles</td>
+                        <td><small>Ray Dalio</small></td>
+                    </tr>
+                    <tr>
+                        <td>2. Atomic Habits</td>
+                        <td><small>James Clear</small></td>
+                    </tr>
+                    <tr>
+                        <td>3. The Compound Effect</td>
+                        <td><small>Darren Hardy</small></td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <div class="dropdown-divider"></div>
+        
+        <!-------------------- Flask Hobby -------------------->
+        <ul>
+            <li>
+                Experimenting on andrew's notes<br>
+                <small><u>Looking at</u></small>
+                <table>
+                    <tr>
+                        <td>1. Flask Security</td>
+                        <td><small>For secure logins</small></td>
+                    </tr>
+                    <tr>
+                        <td>2. Javascript</td>
+                        <td><small>For better UI/UX</small></td>
+                    </tr>
+                    <tr>
+                        <td>3. SQL Alchemy</td>
+                        <td><small>For better data mgmt.</small></td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <div class="dropdown-divider"></div>
+
+        <!-------------------- Cooking Hobby -------------------->
+        <ul>
+            <li>
+                Cooking!<br>
+                <small><u>Favorite Cuisines | Dish</u></small>
+                <table>
+                    <tr>
+                        <td>1. Indonesian</td>
+                        <td><small>Soto Ayam Banjarmasin</small></td>
+                    </tr>
+                    <tr>
+                        <td>2. Chinese</td>
+                        <td><small>Hokkien Mee</small></td>
+                    </tr>
+                    <tr>
+                        <td>3. English</td>
+                        <td><small>Fish & Chips</small></td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h4><u>Interests</u></h4>
+
+        <!-------------------- Personal Interests -------------------->
+        <u>Personal</u>
+        <table>
+            <tr>
+                <td>1. Entrepreneurship</td>
+            </tr>
+            <tr>
+                <td>2. Real Estate</td>
+            </tr>
+            <tr>
+                <td>3. FIRE Movement</td>
+            </tr>
+        </table>
+
+        <div class="dropdown-divider"></div>
+        
+        <!-------------------- Academic Interests -------------------->
+        <u>Academic</u>
+        <table>
+            <tr>
+                <td>1. Process Optimizations | DMAIC </td>
+            </tr>
+            <tr>
+                <td>2. Creating open resource </td>
+            </tr>
+            <tr>
+                <td>3. Chemical & Reactions Engineering </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="content-section">
+        <h4 class="myresume"><a class="myresume" href="{{url_for('posts.resume')}}">View Resume (.pdf)</a></h4>
+    </div>
+
+{% endblock %}

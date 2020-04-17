@@ -51,3 +51,7 @@ def delete_post(post_id):
     db.session.commit()
     flash('Your post has been deleted!', 'success')
     return redirect(url_for('main.blog'))
+
+@posts.route("/resume")
+def resume():
+    return render_template('myresume.html')

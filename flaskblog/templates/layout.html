@@ -81,75 +81,39 @@
         </nav>
     </header>
         
-    <!-------------------- Sidebar Configurations -------------------->
+    <!-------------------- Main Content & Sidebar Configurations -------------------->
     <main role="main" class="container">
         <div class="row">
 
-            {% if sidebar or portfolio %}
-                <div class="col-md-8 site-main">
-            {% else %}
-                <div class="col-md-12 site-main">
-            {% endif %}
+        <!-------------------- Main Content Configurations -------------------->
+        {% if sidebar or portfolio %}
+            <div class="col-md-8 site-main">
+        {% else %}
+            <div class="col-md-12 site-main">
+        {% endif %}
 
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-            {% block content %}{% endblock %}
+                <!-------------------- Flashed Messages -------------------->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <!-------------------- Main Content -------------------->
+                {% block content %}{% endblock %}
+
             </div>
-            
-            {% if portfolio %}
-            <div class="col-md-4 site-sidebar">
-                <div class="content-section">
-                    <h4><u>Education</u></h4>
 
-                    <table class="education-content">
-                        <tr>
-                            <td class="medium-text">Stony Brook University</td>
-                            <td class="align-right"><small class="text-muted">New York</small></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><div class="dropdown-divider"></div></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><a class="school-link" href="https://www.stonybrook.edu/ceas/">College of Eng. and Applied Science</a></td>
-                        </tr>
-                        <tr>
-                            <td><b>B.E.</b> Chemical Engineering<br></td>
-                            <td class="align-right"><small class="text-muted">2017-2021</small></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><div class="dropdown-divider"></div></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><a class="school-link" href="https://www.stonybrook.edu/commcms/cas/">College of Arts and Science </a></td>
-                        </tr>
-                        <tr>
-                            <td><b>B.A.</b> Chemistry <br></td>
-                            <td class="align-right"> <small class="text-muted">2018-2021</small></td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="content-section">
-                    <h4><u>Interests & Hobbies</u></h4>
-                </div>
-
-                <div class="content-section">
-                    <h4 class="myresume"><a class="myresume" href="../files/resume.pdf">View Resume (.pdf)</a></h4>
-                </div>
-            </div>
-            {%  endif %}
-                
+            <!-------------------- Sidebar Configurations -------------------->
             {% if sidebar %}
             <div class="col-md-4 site-sidebar">
+                <!-------------------- Announcements -------------------->
+                {% if sb_ann %}
                 <div class="content-section">
-                    <h3>Our Sidebar</h3>
+                    <h3>Announcements</h3>
                     <p class='text-muted'>You can put any information here you'd like.
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-light">Latest Posts</li>
@@ -159,8 +123,23 @@
                         </ul>
                     </p>
                 </div>
+                {% endif %}
+
+                <!-------------------- Portfolio -------------------->
+                {% if sb_port %}
+                    {% block sidebar_portfolio %}{% endblock %}
+                {% endif %}
+
+                <!-------------------- Custom -------------------->
+                {% if sb_cus %}
+                    {% block sidebar_custom %}{% endblock %}
+                {% endif%}
+
+            {% else %}
+                <div class="col-md-12 site-main">
             </div>
             {% endif %}
+
         </div>
     </main>
 

@@ -162,3 +162,7 @@ body {
   .medium-text {
     font-size: 19px;
   }
+
+  ul {
+    padding-left: 15px;
+  }
