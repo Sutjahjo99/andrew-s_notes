@@ -36,7 +36,15 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                <a class="navbar-brand mr-4" href="/">andrew's notebook</a>
+                {% if main %}
+                <a class="navbar-brand mr-4" href="?">andrew's notebook</a>
+                {% else %}
+                    {% if topic %}
+                    <a class="navbar-brand mr-4" href="?">{{ subject_name }} - {{ topic_name }}</a>
+                    {% else %}
+                    <a class="navbar-brand mr-4" href="?">{{ subject_name }}</a>
+                    {% endif %}
+                {% endif %}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -44,6 +52,8 @@
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Home</a>
+                        <!-------------------- Change in navbar when in subject -------------------->
+                        {% if main %}
                         <a class="nav-item nav-link" href="{{ url_for('main.portfolio') }}">Portfolio</a>
                         <li class="nav-item dropdown">
                             <div class="animate-dropdown">
@@ -51,18 +61,19 @@
                                     Subjects
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Chemistry</a>
+                                    <a class="dropdown-item" href="{{ url_for('chem.chem_home') }}">Chemistry</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Chemical Engineering</a>
+                                    <a class="dropdown-item" href="{{ url_for('cheme.cheme_home')}}">Chemical Engineering</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Mathematics</a>
+                                    <a class="dropdown-item" href="{{ url_for('math.math_home') }}">Mathematics</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Physics</a>
-                                    <!--<div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>-->
+                                    <a class="dropdown-item" href="{{ url_for('phys.phys_home')}}">Physics</a>
                                 </div>
                             </div>
                         </li>
+                        {% else %}
+                            {% block navbar %}{% endblock %}
+                        {% endif %}
                         <a class="nav-item nav-link" href="{{ url_for('main.blog') }}">Blog</a>
                     </div>
                     <!-- Navbar Right Side -->

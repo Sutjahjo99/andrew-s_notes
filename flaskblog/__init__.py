@@ -32,10 +32,18 @@ def create_app(config_class=Config):
     from flaskblog.main.routes import main
     from flaskblog.errors.handlers import errors
     from flaskblog.admin.routes import admins
+    from flaskblog.subjects.routes_chem import chem
+    from flaskblog.subjects.routes_cheme import cheme
+    from flaskblog.subjects.routes_math import math
+    from flaskblog.subjects.routes_phys import phys
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
     app.register_blueprint(errors)
     app.register_blueprint(admins)
+    app.register_blueprint(chem)
+    app.register_blueprint(cheme)
+    app.register_blueprint(math)
+    app.register_blueprint(phys)
 
     return app
