@@ -60,13 +60,13 @@ body {
     margin: 30px 0px 30px 0px;
   }
   
-  .site-main .content-section {
+  .site-main .content-section, .site-main .content-section-portfolio {
     border-top-color: #50bcfa; 
     border-top-width: 6px;
     border-style: solid;
   }
   
-  .site-sidebar .content-section {
+  .site-sidebar .content-section, .site-sidebar .content-section-portfolio {
     border-top-color: #ffa340;
     border-top-width: 6px;
     text-align: Left;
