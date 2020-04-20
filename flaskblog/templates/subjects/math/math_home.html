@@ -1,6 +1,21 @@
 {% extends "layout.html" %}
 
 {% block navbar %}
+    <!--<li class="nav-item dropdown">
+        <div class="animate-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Subjects
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ url_for('chem.chem_home') }}">Chemistry</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url_for('cheme.cheme_home')}}">Chemical Engineering</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url_for('phys.phys_home')}}">Physics</a>
+            </div>
+        </div>
+    </li>-->
+
     <li class="nav-item dropdown">
         <div class="animate-dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -24,35 +39,50 @@
 {% block content %}
     
     <div class="content-section">
-        <h2 class="article-title">Mathematics</h2>
+        <h2 class="article-title">Hello There Curious Mathematician!</h2>
 
         <div class="article-content">
-            
-            <p>
-            Welcome to andrew's notebook! This website is an ongoing project that I am currently working on and it holds two significant purposes.
-            </p>
-            <ol class="home-info" type="1">
-                <li> It is to publish my chemical engineering notes for public use. </li>
+            <p> 
+                If you are here, it could mean that you are interested in learning some mathematics material. Well, I am glad
+                you are able to join me to explore what entails the mathematics section of andrew's notebook. Let me first introduce you
+                to the topic notes that are available for use today:
+                <br><br>
+                <b>Topics:</b>
+                <ul class="subject">
+                    <li><a class="school-link" href=""><b>Calculus I</b></a></li>
                     <br>
-                <li> A fun project that helps further my understanding of web development using Flask and Bootstrap. </li>
-            </ol>
-            
-            <br>
-            <p><b>Here's quick guide to this site:</b></p>
-            
-            <ul class="home-info" type="">
-                <li> <strike>You may find the notes of different subjects on the navigation bar - <a href="{{url_for("main.blog")}}">subjects</a></strike> <b>Not ready!</b></li>
+                    <li><strike><a href=""><b>Calculus II</b></a></strike></li>
+                    <br>
+                    <li><strike><a href=""><b>Calculus III</b></a></strike></li>
+                    <br>
+                    <li><strike><a href=""><b>Calculus IV</b></a></strike></li>
+                    <br>
+                    <li><strike><a href=""><b>Linear Algebra</b></a></strike></li>
+                </ul>
                 <br>
-                <li> There is a <a href="{{url_for("main.blog")}}">blog</a> section on this site which allows you to interact with other curious minds.<br>
-                     (Note that you need to create an account to make posts.) </li>
+                Please understand that this is an ongoing project and the striked out titles mean that the material is not ready for use.
+                Since this notebook might be new to you, here is a <b>quick guide</b> you may refer to, to familiarize yourself with this
+                section of the notebook:
+                <br><br>
+                <b>Quick Guide:</b>
+                <ul class="subject">
+                    <li>Every topic will have its appropriate introduction page to define the scope of the notes.</li>
+                    <br>
+                    <li>
+                        At the beginning of each chapter, there will be a summary of concepts to be covered and at the end
+                        of the chapter, a summary of the formulas and theories will be reviewed.
+                    </li>
+                    <br>
+                    <li>A sidebar of links and tools will be placed to the right of the lesson which will consist of practice questions and 
+                        calculators of some sort that may assist you with the calculation portion of the practice.
+                    </li>
+                </ul>
                 <br>
-                <li> <strike>There might be errors in these notes. You can notify me using the "contact" page!</strike> </li>
-                <br>
-                <li> Enjoy yourself here and be sure to tell others about this open resource! </li>
-            </ul>
-            <br><br>
-            <p>Quick shoutout to <b>Corey Schafer</b> on YouTube for putting up great web dev content!</p>
+                With that in mind, you may begin by selecting a topic of your interest or you may begin from the very start of this notebook
+                using the following button:
+            </p>
         </div>  
+        <button type="button" class="btn btn-primary btn-lg btn-block subject">Let's Get Started!</button>
     </div>
 
 {% endblock content %}

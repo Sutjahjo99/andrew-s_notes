@@ -4,6 +4,21 @@
     <li class="nav-item dropdown">
         <div class="animate-dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Subjects
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ url_for('chem.chem_home') }}">Chemistry</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url_for('cheme.cheme_home')}}">Chemical Engineering</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url_for('math.math_home') }}">Mathematics</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item dropdown">
+        <div class="animate-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Topics
             </a>
             <div class="dropdown-menu">
