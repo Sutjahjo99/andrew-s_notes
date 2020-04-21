@@ -1,36 +1,22 @@
-{% extends "layout.html" %}
+{% extends "layout_subject.html" %}
 
-{% block navbar %}
-    <!--<li class="nav-item dropdown">
-        <div class="animate-dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Subjects
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ url_for('chem.chem_home') }}">Chemistry</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ url_for('cheme.cheme_home')}}">Chemical Engineering</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ url_for('phys.phys_home')}}">Physics</a>
-            </div>
-        </div>
-    </li>-->
-
+{% block topic %}
     <li class="nav-item dropdown">
         <div class="animate-dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Topics
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Linear Algebra</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Calc. I</a>
+                <a class="dropdown-item" href="{{ url_for('math.math_calc_i_intro') }}">Calc. I</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Calc. II</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Calc. III</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Calc. IV</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Linear Algebra</a>
+
             </div>
         </div>
     </li>
@@ -39,7 +25,7 @@
 {% block content %}
     
     <div class="content-section">
-        <h2 class="article-title">Hello There Curious Mathematician!</h2>
+        <h2 class="article-title">Welcome curious mathematician!</h2>
 
         <div class="article-content">
             <p> 
@@ -49,7 +35,7 @@
                 <br><br>
                 <b>Topics:</b>
                 <ul class="subject">
-                    <li><a class="school-link" href=""><b>Calculus I</b></a></li>
+                    <li><a class="school-link" href="{{ url_for('math.math_calc_i_intro') }}"><b>Calculus I</b></a></li>
                     <br>
                     <li><strike><a href=""><b>Calculus II</b></a></strike></li>
                     <br>
@@ -66,11 +52,17 @@
                 <br><br>
                 <b>Quick Guide:</b>
                 <ul class="subject">
+                    <br>
                     <li>Every topic will have its appropriate introduction page to define the scope of the notes.</li>
                     <br>
                     <li>
                         At the beginning of each chapter, there will be a summary of concepts to be covered and at the end
                         of the chapter, a summary of the formulas and theories will be reviewed.
+                    </li>
+                    <br>
+                    <li>
+                        Example problems will be shown at the bottom of the notes to show the use of the concept or formula shown
+                        in the notes.
                     </li>
                     <br>
                     <li>A sidebar of links and tools will be placed to the right of the lesson which will consist of practice questions and 
@@ -79,10 +71,11 @@
                 </ul>
                 <br>
                 With that in mind, you may begin by selecting a topic of your interest or you may begin from the very start of this notebook
-                using the following button:
+                using this button:
             </p>
         </div>  
-        <button type="button" class="btn btn-primary btn-lg btn-block subject">Let's Get Started!</button>
+        <br>
+        <a href="{{ url_for('math.math_calc_i_intro') }}"><button type="button" class="btn btn-primary btn-lg btn-block subject">Let's Get Started!</button></a>
     </div>
 
 {% endblock content %}

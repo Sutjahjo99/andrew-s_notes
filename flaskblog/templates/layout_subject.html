@@ -36,7 +36,17 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                <a class="navbar-brand mr-4" href="?">andrew's notebook</a>
+                {% if chem %}
+                <a class="navbar-brand mr-4" href="?">Chemistry</a>
+                {% elif cheme %}
+                <a class="navbar-brand mr-4" href="?">Chemical Eng.</a>
+                {% elif math %}
+                <a class="navbar-brand mr-4" href="{{ url_for('math.math_home') }}">Mathematics</a>
+                {% elif phys %}
+                <a class="navbar-brand mr-4" href="?">Physics</a>
+                {% else %}
+                <a class="navbar-brand mr-4" href="{{ url_for('main.home') }}">andrew's notebook</a>
+                {% endif %}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -44,7 +54,6 @@
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Home</a>
-                        <a class="nav-item nav-link" href="{{ url_for('main.portfolio') }}">Portfolio</a>
                         <li class="nav-item dropdown">
                             <div class="animate-dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -61,6 +70,10 @@
                                 </div>
                             </div>
                         </li>
+                        <!-------------------- Topic navbar when in subject -------------------->
+                        {% if math %}
+                            {% block topic %}{% endblock %}
+                        {% endif %}
                         <a class="nav-item nav-link" href="{{ url_for('main.blog') }}">Blog</a>
                     </div>
                     <!-- Navbar Right Side -->
@@ -84,7 +97,7 @@
         <div class="row">
 
             <!-------------------- Main Content Configurations -------------------->
-            {% if sidebar or portfolio %}
+            {% if sidebar %}
             <div class="col-md-8 site-main">
             {% else %}
             <div class="col-md-12 site-main">
@@ -94,9 +107,9 @@
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     {% for category, message in messages %}
-                    <div class="alert alert-{{ category }}">
-                        {{ message }}
-                    </div>
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
                     {% endfor %}
                 {% endif %}
             {% endwith %}
@@ -108,31 +121,6 @@
             <!-------------------- Sidebar Configurations -------------------->
             {% if sidebar %}
             <div class="col-md-4 site-sidebar">
-                <!-------------------- Announcements -------------------->
-                {% if sb_ann %}
-                <div class="content-section">
-                    <h3>Announcements</h3>
-                    <p class='text-muted'>You can put any information here you'd like.
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">Latest Posts</li>
-                            <li class="list-group-item list-group-item-light">Announcements</li>
-                            <li class="list-group-item list-group-item-light">Calendars</li>
-                            <li class="list-group-item list-group-item-light">etc</li>
-                        </ul>
-                    </p>
-                </div>
-                {% endif %}
-
-                <!-------------------- Portfolio -------------------->
-                {% if sb_port %}
-                    {% block sidebar_portfolio %}{% endblock %}
-                {% endif %}
-
-                <!-------------------- Custom -------------------->
-                {% if sb_cus %}
-                    {% block sidebar_custom %}{% endblock %}
-                {% endif%}
-            
             {% else %}
             <div class="col-md-12 site-main">
             {% endif %}
@@ -140,6 +128,7 @@
             </div>
 
         </div>
+        
     </main>
 
     {% if thisispost %}

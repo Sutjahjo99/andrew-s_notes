@@ -6,4 +6,8 @@ math = Blueprint('math', __name__)
 
 @math.route("/subjects/math")
 def math_home():
-    return render_template('/subjects/math/math_home.html', title="Math Home", subject=True , subject_name="Mathematics")
+    return render_template('/subjects/math/math_home.html', title="Math Home", math=True , subject_name="Mathematics")
+
+@math.route("/subjects/math/calc_i/intro")
+def math_calc_i_intro():
+    return render_template('subjects/math/calc_I/calc_I_intro.html', title="Calc I", topic=True, topic_name="Calculus I")

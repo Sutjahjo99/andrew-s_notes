@@ -1,0 +1,134 @@
+{% extends "layout_topic.html" %}
+
+{% block navbar %}
+
+    <li class="nav-item dropdown">
+        <div class="animate-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Topics
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ url_for('math.math_calc_i_intro') }}">Calc. I</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Calc. II</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Calc. III</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Calc. IV</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Linear Algebra</a>
+
+            </div>
+        </div>
+    </li>
+{% endblock %}
+
+{% block content %}
+    
+    <div class="content-section">
+        <h2 class="article-title">Welcome to Calculus I - Introduction</h2>
+
+        <div class="article-content">
+            <p>
+                Calculus is the mathematical <b>study of change</b> in a system, does not sound too difficult right? Let's take a look at 
+                a few real life examples of "change in a system":
+                <ul class="topic">
+                    <li class="topic"> Pouring water into your cup. (The water level is increasing, that is a change!) </li>
+                    <li class="topic"> Accelerating the car by stepping on the gas pedal. (The velocity of the car is increasing) </li>
+                    <li class="topic"> Turning on the heater in your room to heat it up. (The temperature in the room is changing) </li>
+                </ul>
+                Although all of these changes may be represented with different mathematical formulas, they are still changes that can be studied
+                analytically! You can find out how many degrees your room is heating up by the minute, how fast the car is 
+                increasing in speed, etc. <i>Isn't that interesting...?</i> 
+            </p>
+        </div>  
+    </div>
+
+    <div class="content-section">
+        <h2 class="article-title">Scope</h2>
+
+        <div class="article-content">
+            <p>
+                You may take a look at what chapters are studied in this topic here. Because calculus is the <u>analytical</u> study of change, we 
+                will first begin by polishing up our algebra before diving into the main portion of calculus:
+            </p>
+                <ul class="topic">
+                    <li class="topic"><a href="">Functions</a></li>
+                    <li class="topic"><a href="">Trigonometric functions</a></li>
+                    <li class="topic"><a href="">Exponential functions & logarithms</a></li>
+                    <li class="topic"><a href="">Inverse functions</a></li>
+                </ul>
+            <p>
+                We will then explore what a <i>derivative</i> is, its rules when using them as well as its applications:
+            </p>
+                <ul class="topic"> 
+                    <li class="topic"><a href="">Derivatives: Informal definition of limits</a></li>
+                    <li class="topic"><a href="">Limits</a></li>
+                    <li class="topic"><a href="">Continuity & Asymptotes</a></li>
+                    <li class="topic"><a href="">Formal definition of a derivative</a></li>
+                    <li class="topic"><a href="">Derivative of polynomials</a></li>
+                    <li class="topic"><a href="">Product & quotient rules</a></li>
+                    <li class="topic"><a href="">Derivatives of trigonometric functions</a></li>
+                    <li class="topic"><a href="">Chain rule</a></li>
+                    <li class="topic"><a href="">Implicit differentiation</a></li>
+                    <li class="topic"><a href="">Derivative of logarithms</a></li>
+                    <li class="topic"><a href="">Related rates</a></li>
+                    <li class="topic"><a href="">Linear approximation</a></li>
+                    <li class="topic"><a href="">Maximization</a></li>
+                    <li class="topic"><a href="">Mean value theorem (MVT)</a></li>
+                    <li class="topic"><a href="">L'Hospital's rule</a></li>
+                    <li class="topic"><a href="">Optimization</a></li>
+                </ul>
+            <p>
+                Once you are familiar with the derivatives, we would then move on the what <i>antiderivatives</i> are, along with its rules and applications:
+            </p>
+                <ul class="topic">
+                    <li class="topic"><a href="">Antiderivative</a></li>
+                    <li class="topic"><a href="">The definite integral</a></li>
+                    <li class="topic"><a href="">The fundamental theorem of calculus</a></li>
+                    <li class="topic"><a href="">Substitution rule</a></li>
+                    <li class="topic"><a href="">Average values</a></li>
+                </ul>
+            <p>
+                Once you have mastered these (^) chapters, you will officially be a Calculus I Expert!
+            </p>
+        </div>  
+        <br>
+        <a href="{{ url_for('math.math_calc_i_intro') }}"><button type="button" class="btn btn-primary btn-lg btn-block subject">Let's Get Started!</button></a>
+    </div>
+    
+
+{% endblock content %}
+
+{% block sidebar_topic %}
+    <div class="content-section">
+        <h6><b>Useful Links :</b></h6>
+        <table>
+            <tr>
+                <td><u><a href="{{ url_for('math.math_home') }}">Math Homepage</a></u></td>
+            </tr>
+            <tr>
+                <td><u><a href="{{ url_for('math.math_calc_i_intro') }}">Calc I Homepage</a></u></td>
+            </tr>
+            <tr>
+                <td><div class="dropdown-divider"></div></td>
+            </tr>
+            <tr>
+                <td><u><a href="#">Calc I Practice Problems</a></u></td>
+            </tr>
+            <tr>
+                <td><u><a href="#">Calc I Practice Solutions</a></u></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="content-section">
+        <h6><b>Calculator :</b></h6>
+        <table>
+            <tr>
+                <td><u><a href="">Equation Solver</a></u></td>
+            </tr>
+        </table>
+    </div>
+
+{% endblock %}
