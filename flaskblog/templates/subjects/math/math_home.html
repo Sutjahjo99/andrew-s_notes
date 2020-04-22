@@ -7,7 +7,7 @@
                 Topics
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ url_for('math.math_calc_i_intro') }}">Calc. I</a>
+                <a class="dropdown-item" href="{{ url_for('math.calc_i_intro') }}">Calc. I</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Calc. II</a>
                 <div class="dropdown-divider"></div>
@@ -35,7 +35,7 @@
                 <br><br>
                 <b>Topics:</b>
                 <ul class="subject">
-                    <li><a class="school-link" href="{{ url_for('math.math_calc_i_intro') }}"><b>Calculus I</b></a></li>
+                    <li><a class="school-link" href="{{ url_for('math.calc_i_intro') }}"><b>Calculus I</b></a></li>
                     <br>
                     <li><strike><a href=""><b>Calculus II</b></a></strike></li>
                     <br>
@@ -75,7 +75,7 @@
             </p>
         </div>  
         <br>
-        <a href="{{ url_for('math.math_calc_i_intro') }}"><button type="button" class="btn btn-primary btn-lg btn-block subject">Let's Get Started!</button></a>
+        <a href="{{ url_for('math.calc_i_intro') }}"><button type="button" class="btn btn-primary btn-lg btn-block subject">Let's Get Started!</button></a>
     </div>
 
 {% endblock content %}

@@ -1,0 +1,97 @@
+{% extends "layout_topic.html" %}
+
+{% block navbar %}
+
+    <li class="nav-item dropdown">
+        <div class="animate-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Topics
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ url_for('math.calc_i_intro') }}">Calc. I</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Calc. II</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Calc. III</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Calc. IV</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Linear Algebra</a>
+
+            </div>
+        </div>
+    </li>
+{% endblock %}
+
+{% block content %}
+
+    <div class="content-section">
+        <h2 class="article-title">Additional Practice Problems</h2>
+
+        <div class="article-content">
+            <ul class="topic">
+                <li class="topic"><a href="files/functions_pp.pdf" target="_blank">Functions</a></li>
+                <li class="topic"><a href="">Trigonometric functions</a></li>
+                <li class="topic"><a href="">Exponential functions & logarithms</a></li>
+                <li class="topic"><a href="">Inverse functions</a></li>
+                <li class="topic"><a href="">Derivatives: Informal definition of limits</a></li>
+                <li class="topic"><a href="">Limits</a></li>
+                <li class="topic"><a href="">Continuity & Asymptotes</a></li>
+                <li class="topic"><a href="">Formal definition of a derivative</a></li>
+                <li class="topic"><a href="">Derivative of polynomials</a></li>
+                <li class="topic"><a href="">Product & quotient rules</a></li>
+                <li class="topic"><a href="">Derivatives of trigonometric functions</a></li>
+                <li class="topic"><a href="">Chain rule</a></li>
+                <li class="topic"><a href="">Implicit differentiation</a></li>
+                <li class="topic"><a href="">Derivative of logarithms</a></li>
+                <li class="topic"><a href="">L'Hospital's rule</a></li>
+                <li class="topic"><a href="">Related rates</a></li>
+                <li class="topic"><a href="">Linear approximation</a></li>
+                <li class="topic"><a href="">Maximization</a></li>
+                <li class="topic"><a href="">Mean value theorem (MVT)</a></li>
+                <li class="topic"><a href="">Optimization</a></li>
+                <li class="topic"><a href="">Antiderivative</a></li>
+                <li class="topic"><a href="">The definite integral</a></li>
+                <li class="topic"><a href="">The fundamental theorem of calculus</a></li>
+                <li class="topic"><a href="">Substitution rule</a></li>
+                <li class="topic"><a href="">Average values</a></li>
+            </ul>
+        </div>  
+
+    </div>
+    
+
+{% endblock content %}
+
+{% block sidebar_topic %}
+    <div class="content-section">
+        <h6><b>Useful Links :</b></h6>
+        <table>
+            <tr>
+                <td><u><a href="{{ url_for('math.math_home') }}">Math Homepage</a></u></td>
+            </tr>
+            <tr>
+                <td><u><a href="{{ url_for('math.calc_i_intro') }}">Calc I Homepage</a></u></td>
+            </tr>
+            <tr>
+                <td><div class="dropdown-divider"></div></td>
+            </tr>
+            <tr>
+                <td><u><a href="{{ url_for('math.calc_i_pp') }}">Calc I Practice Problems</a></u></td>
+            </tr>
+            <tr>
+                <td><u><a href="#">Calc I Practice Solutions</a></u></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="content-section">
+        <h6><b>Calculator :</b></h6>
+        <table>
+            <tr>
+                <td><u><a href="">Equation Solver</a></u></td>
+            </tr>
+        </table>
+    </div>
+
+{% endblock %}

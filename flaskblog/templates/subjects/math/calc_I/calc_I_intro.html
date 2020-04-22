@@ -8,7 +8,7 @@
                 Topics
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{ url_for('math.math_calc_i_intro') }}">Calc. I</a>
+                <a class="dropdown-item" href="{{ url_for('math.calc_i_intro') }}">Calc. I</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Calc. II</a>
                 <div class="dropdown-divider"></div>
@@ -54,12 +54,13 @@
             </p>
                 <ul class="topic">
                     <li class="topic"><a href="">Functions</a></li>
+                    <!--
                     <li class="topic"><a href="">Trigonometric functions</a></li>
                     <li class="topic"><a href="">Exponential functions & logarithms</a></li>
                     <li class="topic"><a href="">Inverse functions</a></li>
                 </ul>
             <p>
-                We will then explore what a <i>derivative</i> is, its rules when using them as well as its applications:
+                We will then explore what a <i>derivative</i> is and the rules that apply:
             </p>
                 <ul class="topic"> 
                     <li class="topic"><a href="">Derivatives: Informal definition of limits</a></li>
@@ -72,15 +73,20 @@
                     <li class="topic"><a href="">Chain rule</a></li>
                     <li class="topic"><a href="">Implicit differentiation</a></li>
                     <li class="topic"><a href="">Derivative of logarithms</a></li>
+                    <li class="topic"><a href="">L'Hospital's rule</a></li>
+                </ul>
+            <p>
+                Then we will continue with introducing <i>derivative applications</i>, which include:
+            </p>
+                <ul class="topic">
                     <li class="topic"><a href="">Related rates</a></li>
                     <li class="topic"><a href="">Linear approximation</a></li>
                     <li class="topic"><a href="">Maximization</a></li>
                     <li class="topic"><a href="">Mean value theorem (MVT)</a></li>
-                    <li class="topic"><a href="">L'Hospital's rule</a></li>
                     <li class="topic"><a href="">Optimization</a></li>
                 </ul>
             <p>
-                Once you are familiar with the derivatives, we would then move on the what <i>antiderivatives</i> are, along with its rules and applications:
+                Once you are familiar with the derivatives, we would then move on to learning what <i>antiderivatives</i> are, along with applicable integration rules:
             </p>
                 <ul class="topic">
                     <li class="topic"><a href="">Antiderivative</a></li>
@@ -91,10 +97,10 @@
                 </ul>
             <p>
                 Once you have mastered these (^) chapters, you will officially be a Calculus I Expert!
-            </p>
+            </p>-->
         </div>  
         <br>
-        <a href="{{ url_for('math.math_calc_i_intro') }}"><button type="button" class="btn btn-primary btn-lg btn-block subject">Let's Get Started!</button></a>
+        <a href="{{ url_for('math.calc_i_intro') }}"><button type="button" class="btn btn-primary btn-lg btn-block subject">Let's Get Started!</button></a>
     </div>
     
 
@@ -108,13 +114,13 @@
                 <td><u><a href="{{ url_for('math.math_home') }}">Math Homepage</a></u></td>
             </tr>
             <tr>
-                <td><u><a href="{{ url_for('math.math_calc_i_intro') }}">Calc I Homepage</a></u></td>
+                <td><u><a href="{{ url_for('math.calc_i_intro') }}">Calc I Homepage</a></u></td>
             </tr>
             <tr>
                 <td><div class="dropdown-divider"></div></td>
             </tr>
             <tr>
-                <td><u><a href="#">Calc I Practice Problems</a></u></td>
+                <td><u><a href="{{ url_for('math.calc_i_pp') }}">Calc I Practice Problems</a></u></td>
             </tr>
             <tr>
                 <td><u><a href="#">Calc I Practice Solutions</a></u></td>
