@@ -1,0 +1,73 @@
+{% extends "layout_subject.html" %}
+
+{% block navbarhome %}
+    <li class="nav-item dropdown">
+        <div class="animate-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Topics
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Physics I</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Physics II</a>
+            </div>
+        </div>
+    </li>
+{% endblock %}
+
+{% block content %}
+    
+<div class="content-section mysec-phys">
+    <div class="article-content">
+        <u><h2>Welcome Inquisitive Physicists!</h2></u>
+        
+        If you are here, it could mean that you are interested in learning some physics material. Well, I am glad
+        you are able to join me to explore what entails the physics section of andrew's notebook. Take a look below
+        for the available topics that is/will be offered:
+    </div>  
+</div>
+
+<div class="content-section mysec-phys">
+    <div class="article-content">
+        <table class="view-all">
+            <tr>
+                <td style="text-align: center; width:20%; border:1px;">
+                    \(F_{net} = ma\)<br><br>
+                    \(W = \int_{x_o}^{x} F(x) dx\)<br><br>
+                    \(Power = \frac{dW}{dt}\)
+                </td>
+                <td style="width:60%; padding: 10px 50px 10px 30px;">
+                <u><h2>Physics I</h2></u>
+                    This is the first part of physics where you get to explore more of the mechanics of how objects move about! This can help you gain transferable knowledge
+                    that is later used in chemical engineering. This might mostly be understanding what work is, how does friction play a part in a system, oscillations, etc. This is a good
+                    way to expand your knowledge of why things act the way they do.
+                </td class="content-button-divider">
+                <td style="width:15%; text-align: center;"><button type="button" class="btn btn-primary phys"><a class="view-all" href="{{ url_for('subjects.subject_home', subject_name='phys') }}">Learn Phys. I</a></button></td>
+            </tr>
+        </table>
+    </div>  
+</div>
+
+<div class="content-section mysec-phys">
+    <div class="article-content">
+        <table class="view-all">
+            <tr>
+                <td style="text-align: center; width:20%; border:1px;">
+                    \(V = IR\)<br><br>
+                    \(\nabla \cdot E = \frac{\rho}{\epsilon_{o}}\)<br><br>
+                    \(\int_A B \cdot dA = 0 \)
+                </td>
+                <td style="width:60%; padding: 10px 50px 10px 30px;">
+                <u><h2>Physics II</h2></u>
+                    While it might seem that the conintuation of physics I be the study of more mechanics, it is actually more of a deviation to other matters of the subjects. 
+                    In physics II, we will be exploring more of electricity and magnetism. You will be exposed to simple circuits, magnets, different types of forces, etc. 
+                    It is also explained how and why electricity and magnetism are related through the use of maxwell's equations! This is not too important, in my opinion,
+                    in your chemical engineering, although it is always good to know more! 
+                </td class="content-button-divider">
+                <td style="width:15%; text-align: center;"><button type="button" class="btn btn-primary phys"><a class="view-all" href="{{ url_for('subjects.subject_home', subject_name='phys') }}">Learn Phys. II</a></button></td>
+            </tr>
+        </table>
+    </div>  
+</div>
+
+{% endblock content %}

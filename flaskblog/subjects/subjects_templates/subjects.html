@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!--
+<div class="content-section mysec-chem">
+    <div class="article-content">
+        <table class="view-all">
+            <tr>
+                <td ><img class="" src="{{ url_for('subjects.static', filename='images/chem_dp.jpg') }}" alt="Card image cap"></td>
+                <td style="width:60%; padding: 10px 50px 10px 30px;">
+                <u><h2>Chemistry</h2></u>
+                    Chemistry is the central branch of Science that deals with properties of a substance, the change they undergo
+                    and the determination of natural laws that governs the changes. While this was not a personal favorite, I enjoyed
+                    learning about the different types of reactions and the fundamental reasons why the reaction happened the way it did.
+                    Despite being a little bit challenging, an understanding of chemistry can help you with your chemical engineering career
+                    a long way.
+                </td>
+                <td style="width:10%;"><a class="view-all" href="{{ url_for('subjects.subject_home', subject_name='chem') }}"><button type="button" class="btn btn-primary chem">Learn!</button></a></td>
+            </tr>
+        </table>
+    </div>  
+</div>
+-->
+<div class="content-section mysec-cheme">
+    <div class="article-content">
+        <table class="view-all">
+            <tr>
+                <td><img class="" src="{{ url_for('subjects.static', filename='images/cheme_dp.jpg') }}" alt="Card image cap"></td>
+                <td style="width:60%; padding: 10px 50px 10px 30px;">
+                <u><h2>Chemical Engineering</h2></u>
+                    This is the entire reason why I built this website. If I didn't love this subject, I wouldn't have been crazy
+                    enought to spend my free time and weekends doing this. From all of the transport phenomena (maybe except for thermo)
+                    classes, reactions engineering, process control and many more, these classes were not only fun but also challenging.
+                    I hope these notes can play a part in helping you realize your passion for ChemE! 
+                    <br><br>
+                    This subject breaks down each individual component of a reaction and through thorough analysis, it can help you
+                    understand how the upscaling of chemical reactions to the desired size is possible! You can click
+                    on the button to the right and start learning more about Chemical Engineering.   
+                </td class="content-button-divider">
+                <td style="width:10%; text-align: center;"><a class="view-all" href="{{ url_for('subjects.subject_home', subject_name='cheme') }}"><button type="button" class="btn btn-primary cheme">Learn!</button></a></td>
+            </tr>
+        </table>
+    </div>  
+</div>
+
+<div class="content-section mysec-math">
+    <div class="article-content">
+        <table class="view-all">
+            <tr>
+                <td><img class="" src="{{ url_for('subjects.static', filename='images/math_dp.jpg') }}" alt="Card image cap"></td>
+                <td style="width:60%; padding: 10px 50px 10px 30px;">
+                <u><h2>Mathematics</h2></u>
+                    Math... It is something that a lot of people are afraid of doing because <i>its too difficult</i>. Well, I believe that
+                    everything has a learning curve, and fortunately, the learning curve is not too steep for math - if you're willing to put in the
+                    time and effort to master the skill. With enough practice, <b>you</b> can be a master at it! Having a good grasp of differential and
+                    integral calculus is very useful in understanding the concepts presented in chemical engineering courses.  
+                </td class="content-button-divider">
+                <td style="width:10%; text-align: center;"><a class="view-all" href="{{ url_for('subjects.subject_home', subject_name='math') }}"><button type="button" class="btn btn-primary math">Learn!</button></a></td>
+            </tr>
+        </table>
+    </div>  
+</div>
+
+<div class="content-section mysec-phys">
+    <div class="article-content">
+        <table class="view-all">
+            <tr>
+                <td><img class="" src="{{ url_for('subjects.static', filename='images/phys_dp.jpg') }}" alt="Card image cap"></td>
+                <td style="width:60%; padding: 10px 50px 10px 30px;">
+                <u><h2>Physics</h2></u>
+                    This one is a tough one to take a stand. I never particularly liked general physics, but I did like quantum physics and
+                     electromagnetism. Now, physics is useful in understanding where the laws used in engineering comes from, but with that said,
+                     it is not too crucial in applying engineering principles to practice - but it definitely can help you derive the fundamental
+                     theorems used in chemical engineering which you can then play around with. 
+                </td class="content-button-divider">
+                <td style="width:10%; text-align: center;"><a class="view-all" href="{{ url_for('subjects.subject_home', subject_name='phys') }}"><button type="button" class="btn btn-primary phys">Learn!</button></a></td>
+            </tr>
+        </table>
+    </div>  
+</div>
+
+{% endblock %}

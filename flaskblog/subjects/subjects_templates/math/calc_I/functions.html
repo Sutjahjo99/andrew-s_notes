@@ -1,0 +1,94 @@
+{% extends "layout_topic.html" %}
+
+{% block navbar %}
+
+    <li class="nav-item dropdown">
+        <div class="animate-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Topics
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{ url_for('math.calc_i_intro') }}">Calc. I</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Calc. II</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Calc. III</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Calc. IV</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Linear Algebra</a>
+
+            </div>
+        </div>
+    </li>
+{% endblock %}
+
+{% block content %}
+
+    <div class="content-section">
+        <h2 class="article-title">Functions</h2>
+        <div class="article-content">
+            
+        </div>
+        
+    </div>
+
+    <div class="content-section">
+        <h2 class="article-title"></h2>
+        <div class="article-content">
+
+        </div>
+        
+    </div>
+
+    <div class="content-section">
+        <h2 class="article-title"></h2>
+        <div class="article-content">
+
+        </div>
+        
+    </div>
+
+    <div class="content-section">
+        <h2 class="article-title"></h2>
+        <div class="article-content">
+
+        </div>
+        
+    </div>
+    
+
+{% endblock content %}
+
+{% block sidebar_topic %}
+    <div class="content-section">
+        <h6><b>Useful Links :</b></h6>
+        <table>
+            <tr>
+                <td><u><a href="#">Math Homepage</a></u></td>
+            </tr>
+            <tr>
+                <td><u><a href="#">Calc I Homepage</a></u></td>
+            </tr>
+            <tr>
+                <td><div class="dropdown-divider"></div></td>
+            </tr>
+            <tr>
+                <td><u><a href="#">Calc I Practice Problems</a></u></td>
+            </tr>
+            <tr>
+                <td><u><a href="#">Calc I Practice Solutions</a></u></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="content-section">
+        <h6><b>Calculator :</b></h6>
+        <table>
+            <tr>
+                <td><u><a href="">Equation Solver</a></u></td>
+            </tr>
+        </table>
+    </div>
+
+{% endblock %}

@@ -36,16 +36,10 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                {% if chem %}
-                <a class="navbar-brand mr-4" href="?">Chemistry</a>
-                {% elif cheme %}
-                <a class="navbar-brand mr-4" href="?">Chemical Eng.</a>
-                {% elif math %}
-                <a class="navbar-brand mr-4" href="{{ url_for('math.math_home') }}">Mathematics</a>
-                {% elif phys %}
-                <a class="navbar-brand mr-4" href="?">Physics</a>
+                {% if topic %}
+                <a class="navbar-brand mr-4" href="?">{{ topic_name }}</a>
                 {% else %}
-                <a class="navbar-brand mr-4" href="{{ url_for('main.home') }}">andrew's notebook</a>
+                <a class="navbar-brand mr-4" href="?">andrew's notebook</a>
                 {% endif %}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -60,19 +54,18 @@
                                     Subjects
                                 </a>
                                 <div class="dropdown-menu">
-                                    <!--<a class="dropdown-item" href="{{ url_for('chem.chem_home') }}"</a>>Chemistry</a>
-                                    <div class="dropdown-divider"></div>-->
-                                    <!--<a class="dropdown-item" href="{{ url_for('cheme.cheme_home')}}">Chemical Engineering</a>
-                                    <div class="dropdown-divider"></div>-->
-                                    <a class="dropdown-item" href="{{ url_for('math.math_home') }}">Mathematics</a>
-                                    <!--<div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ url_for('phys.phys_home')}}">Physics</a>-->
+                                    <a class="dropdown-item" href="#">Chemistry</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Chemical Engineering</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Mathematics</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Physics</a>
                                 </div>
                             </div>
                         </li>
-                        <!-------------------- Topic navbar when in subject -------------------->
-                        {% if math %}
-                            {% block topic %}{% endblock %}
+                        {% if topic %}
+                            {% block navbar %}{% endblock %}
                         {% endif %}
                         <a class="nav-item nav-link" href="{{ url_for('main.blog') }}">Blog</a>
                     </div>
@@ -97,10 +90,10 @@
         <div class="row">
 
             <!-------------------- Main Content Configurations -------------------->
-            {% if sidebar %}
-            <div class="col-md-8 site-main">
+            {% if topic %}
+                <div class="col-md-9 site-main">
             {% else %}
-            <div class="col-md-12 site-main">
+                <div class="col-md-12 site-main">
             {% endif %}
 
             <!-------------------- Flashed Messages -------------------->
@@ -119,16 +112,16 @@
             </div>
 
             <!-------------------- Sidebar Configurations -------------------->
-            {% if sidebar %}
-            <div class="col-md-4 site-sidebar">
+            {% if topic %}
+            <div class="col-md-3 site-sidebar">
+                {% block sidebar_topic %}{% endblock %}
             {% else %}
             <div class="col-md-12 site-main">
             {% endif %}
-
+            
             </div>
 
         </div>
-        
     </main>
 
     {% if thisispost %}

@@ -36,7 +36,7 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                <a class="navbar-brand mr-4" href="?">andrew's notebook</a>
+                <a class="navbar-brand mr-4" href="{{ url_for('main.home') }}">andrew's notebook</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -48,16 +48,12 @@
                         <li class="nav-item dropdown">
                             <div class="animate-dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Subjects
+                                    Notes
                                 </a>
                                 <div class="dropdown-menu">
-                                    <!--<a class="dropdown-item" href="{{ url_for('chem.chem_home') }}"</a>>Chemistry</a>
-                                    <div class="dropdown-divider"></div>-->
-                                    <!--<a class="dropdown-item" href="{{ url_for('cheme.cheme_home')}}">Chemical Engineering</a>
-                                    <div class="dropdown-divider"></div>-->
-                                    <a class="dropdown-item" href="{{ url_for('math.math_home') }}">Mathematics</a>
-                                    <!--<div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ url_for('phys.phys_home')}}">Physics</a>-->
+                                    <a class="dropdown-item" href="{{ url_for('subjects.subject_index') }}">Academic Notes</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ url_for('subjects.subject_index') }}">Professional Dev.</a>
                                 </div>
                             </div>
                         </li>

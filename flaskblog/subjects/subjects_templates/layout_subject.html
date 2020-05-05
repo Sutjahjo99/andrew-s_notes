@@ -24,6 +24,10 @@
         gtag('config', 'UA-163687277-1');
     </script>
 
+    <!-- MathJax Addition-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
     {% if title %}
         <title> anotes - {{ title }} </title>
@@ -36,11 +40,7 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                {% if topic %}
-                <a class="navbar-brand mr-4" href="?">{{ topic_name }}</a>
-                {% else %}
-                <a class="navbar-brand mr-4" href="?">andrew's notebook</a>
-                {% endif %}
+                <a class="navbar-brand mr-4" href="{{ url_for('main.home') }}">andrew's notebook</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -48,25 +48,8 @@
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Home</a>
-                        <li class="nav-item dropdown">
-                            <div class="animate-dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Subjects
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{ url_for('chem.chem_home') }}">Chemistry</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ url_for('cheme.cheme_home')}}">Chemical Engineering</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ url_for('math.math_home') }}">Mathematics</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ url_for('phys.phys_home')}}">Physics</a>
-                                </div>
-                            </div>
-                        </li>
-                        {% if topic %}
-                            {% block navbar %}{% endblock %}
-                        {% endif %}
+                        {% block navbarhome %}{% endblock %}
+                        <a class="nav-item nav-link" href="{{ url_for('subjects.subject_index') }}">All Subjects</a>
                         <a class="nav-item nav-link" href="{{ url_for('main.blog') }}">Blog</a>
                     </div>
                     <!-- Navbar Right Side -->
@@ -90,10 +73,11 @@
         <div class="row">
 
             <!-------------------- Main Content Configurations -------------------->
-            {% if topic %}
-                <div class="col-md-9 site-main">
+            {% if sidebar %}
+            <div class="col-md-8 site-main">
+            <div class="col-md-4 site-sidebar">
             {% else %}
-                <div class="col-md-12 site-main">
+            <div class="col-md-12 site-main">
             {% endif %}
 
             <!-------------------- Flashed Messages -------------------->
@@ -110,18 +94,10 @@
             {% block content %}{% endblock %}
 
             </div>
-
-            <!-------------------- Sidebar Configurations -------------------->
-            {% if topic %}
-            <div class="col-md-3 site-sidebar">
-                {% block sidebar_topic %}{% endblock %}
-            {% else %}
-            <div class="col-md-12 site-main">
-            {% endif %}
-            
             </div>
 
         </div>
+        
     </main>
 
     {% if thisispost %}

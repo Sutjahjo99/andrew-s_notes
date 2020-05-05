@@ -19,6 +19,10 @@
   a, a.school-link:hover, a.myresume:hover {
     color: #444444;
   }
+  
+  a.view-all, a.view-all:hover{
+    color: white;
+  }
 
   a:hover, a.myresume {
     text-decoration: none;
@@ -74,6 +78,78 @@
     border-top-width: 6px;
     text-align: Left;
     border-style: solid;
+  }
+
+  .site-main .mysec-chem{
+    border-top-color: #0A4C8C;
+  }
+
+  button.chem{
+    background-color: #0A4C8C;
+    border-color: #0A4C8C;
+    color: white;
+    padding: 15px;
+  }
+
+  button.chem:hover{
+    background-color: #0A4C8C;
+    border-color: #0A4C8C;
+    color: white;
+    opacity: 80%;
+  }
+
+  .site-main .mysec-cheme{
+    border-top-color: #0A8C77;
+  }
+
+  button.cheme{
+    background-color: #0A8C77;
+    border-color: #0A8C77;
+    color: white;
+    padding: 15px;
+  }
+
+  button.cheme:hover{
+    background-color: #0A8C77;
+    border-color: #0A8C77;
+    color: white;
+    opacity: 80%;
+  }
+
+  .site-main .mysec-math{
+    border-top-color: #80030D;
+  }
+
+  button.math{
+    background-color: #80030D;
+    border-color: #80030D;
+    color: white;
+    padding: 15px;
+  }
+
+  button.math:hover{
+    background-color: #80030D;
+    border-color: #80030D;
+    color: white;
+    opacity: 80%;
+  }
+
+  .site-main .mysec-phys{
+    border-top-color: #60BF6D;
+  }
+
+  button.phys{
+    background-color: #60BF6D;
+    border-color: #60BF6D;
+    color: white;
+    padding: 15px;
+  }
+
+  button.phys:hover{
+    background-color: #60BF6D;
+    border-color: #60BF6D;
+    color: white;
+    opacity: 80%;
   }
   
   .article-title {
@@ -163,11 +239,16 @@
     display: block;
   }
 
-  table {
-    /*border: 1px solid black;*/
-    width: 100%;
+  table.view-all{
+    margin: 10px 0px 10px 0px;
   }
+
   /*
+  table {
+    border: 1px solid black;
+    width: 100%;  
+  }
+
   th, tr, td {
     border: 1px solid black;
   }
