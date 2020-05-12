@@ -12,19 +12,23 @@
             <ol class="home-info" type="1">
                 <li> It is to publish my chemical engineering notes for public use. </li>
                     <br>
-                <li> A fun project that helps further my understanding of web development using Flask and Bootstrap. </li>
+                <li> A fun project that helps further my understanding of web development using Flask and Bootstrap.</li>
             </ol>
             
             <br>
             <p><b>Here's quick guide to this site:</b></p>
             
             <ul class="home-info" type="">
-                <li> <strike>You may find the notes of different subjects on the navigation bar - <a href="{{url_for("main.blog")}}">subjects</a></strike> <b>Not ready!</b></li>
+                <li> 
+                    You may find the notes of different subjects on the navigation bar - <a href="{{ url_for('subjects.subject_index') }}"><u>Academic Notes</u></a> 
+                    <br>
+                    <small class="text-muted">As this is a new site, there is only 1 sub-chapter of CRE available, I am currently typing as you read. </small>
+                </li>
                 <br>
-                <li> There is a <a href="{{url_for("main.blog")}}">blog</a> section on this site which allows you to interact with other curious minds.<br>
+                <li> There is a <a href="{{url_for('main.blog')}}"><u>blog</u></a> section on this site which allows you to interact with other curious minds.<br>
                      (Note that you need to create an account to make posts.) </li>
                 <br>
-                <li> <strike>There might be errors in these notes. You can notify me using the "contact" page!</strike> </li>
+                <li> There might be errors in these notes. You can notify me using the <a href="url_for('main.contact')"><u>contact</u></a> page!</li>
                 <br>
                 <li> Enjoy yourself here and be sure to tell others about this open resource! </li>
             </ul>

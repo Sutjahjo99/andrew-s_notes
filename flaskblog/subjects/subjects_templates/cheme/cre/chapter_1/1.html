@@ -1,0 +1,89 @@
+{% extends "layout_subject.html" %}
+
+{% block content %}
+
+<div class="content-section mysec-cheme">
+    <div class="article-content">
+        <h3>Chapter 1: Mole Balance</h3>
+        <br>
+        <h5><u>1.1 Rate of Reaction</u></h5>
+
+        <p> The rate of reaction tells us how fast or slow 1-mole of a chemical species is being <u>consumed</u> in a chemical reaction.
+            Hence the <b>rate of disappearance</b> of chemical species j will be denoted by the symbol <i>\( -r_j \)</i>. Now, given the chemical reaction:
+        </p>
+
+        <p class="topic-center-item">\(A + B \rightarrow C + D\)</p>
+
+        <p> We can denote the rate of disappearance of species A and B as <i>\( -r_A \)</i> and <i>\( -r_B \)</i> respectively as they are being consumed
+            to synthesize C and D. Whereas species C and D are currently being formed, therefore, their respective <b>rate of formation</b> may be denoted by 
+            <i>\( r_C \)</i> and <i>\( r_D \)</i>. There are several nuances that needs to be noted about the rate laws. The rate law:
+
+            <ul class="topic-list">
+                <li>is an algebraic equation.</li>
+                <li>is dependent <u>ONLY</u> on the properties of the reacting materials and surrounding conditions.</li>
+                <li>is <u>NOT</u> dependent on the type of reactor used to carry out the reaction.</li>
+            </ul>
+
+            In addition to the rate of formation <i>\( r_j \)</i> and the rate of disappearance <i>\( -r_j \)</i>, there is a similar rate notation:
+            <i>\( -r_{j}' \)</i>, which denotes the rate law of a <b>heterogeneous reaction</b>. A heterogeneous reaction is a chemical reaction that involves more than one
+            phase of matter - an example of this would be the use of a solid catalyst in a solution to speed up a reaction.
+        </p>
+
+        <br><div class="dropdown-divider"></div><br>
+        
+        <p>
+            The rate law has a relationship with the concentration of the participating chemical species in a chemical reaction. Let's take a
+            gander at another example:
+        </p>
+        
+        <p style="text-align: center;">\(A \rightarrow products\)</p>
+        
+        <p> As such, here are some examples of what the rate law of A may look like:
+
+        <ul class="topic-equations">
+            <li>\( -r_A = kC_A \)</li>
+            <li>\( -r_A = kC_A^2 \)</li>
+            <li>\( -r_A = \frac{k_1C_A}{1 + k_2C_A} \)</li>
+        </ul>
+
+            depending on its relationship with the concentration of chemical species A, where k is the rate constant and
+            \(C_A\) is the concentration of A.
+        
+        </p>
+    </div>  
+</div>
+
+{% endblock content %}
+
+{% block sidebar %}
+
+<div class="content-section subject-topic-ann">
+    <div class="article-content">
+        <h3>Quick Notes</h3>
+        <u>Standard units</u>
+        <ul class="topic-equations" type="square">
+            <li> \( r_j \) = \( \frac{moles}{volume \cdot time} \)</li>
+            <li> \( r_j' \) = \( \frac{moles}{time \cdot mass_{catalyst}} \)</li>
+        </ul>
+    </div>  
+</div>
+
+<div class="content-section subject-topic-ann">
+    <div class="article-content">
+        <h3>Useful Links</h3>
+    </div>  
+</div>
+
+{% endblock %}
+
+{% block togglebtn %}
+<div class="content-section topic-buttons">
+    <table style="width: 100%; border: 1px; ">
+        <tr>
+            <td style="text-align: left;"><a href="{{ url_for('subjects.subject_topic', subject_name='cheme', topic_name='cre') }}"><button type="button" class="btn btn-primary">&#8592; Back</button></a></td>
+            <td style="text-align: center;"><a href="{{url_for('subjects.subject_home', subject_name='cheme')}}"><button type="button" class="btn btn-secondary">Home</button></a></td>
+            <td style="text-align: right;"><a href="{{url_for('subjects.topic_chapter', subject_name='cheme', topic_name='cre', chapter='chapter_1', num='2')}}"><button type="button" class="btn btn-primary">Next &#8594;</button></a></td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "layout_subject.html" %}
+
+{% block content %}
+
+<div class="content-section mysec-cheme">
+    <div class="article-content">
+        <u><h2>Chemical Reactions Engineering</h2></u>
+        
+        These are the chapters that are currently available for use:
+        <br><br>
+
+        <u>Chapters:</u>
+        <ol type="1">
+            <li class="topic-arr"><a href="{{url_for('subjects.topic_chapter', subject_name='cheme', topic_name='cre', chapter='chapter_1', num='1')}}">Mole Balance</a></li>
+            <strike>
+            <li class="topic-arr"><a href="#">Conversion and Reactor Sizing</a></li>
+            <li class="topic-arr"><a href="#">Rate Laws</a></li>
+            <li class="topic-arr"><a href="#">Stoichiometry</a></li>
+            <li class="topic-arr"><a href="#">Isothermal Reactor Design: Conversion</a></li>
+            <li class="topic-arr"><a href="#">Isothermal Reactor Design: Moles & Molar Flow Rate</a></li>
+            <li class="topic-arr"><a href="#">Collection and Analysis of Rate Data</a></li>
+            <li class="topic-arr"><a href="#">Multiple Reactions</a></li>
+            <li class="topic-arr"><a href="#">Reaction Mechanisms, Pathways, Bioreactions and Bioreactors</a></li>
+            <li class="topic-arr"><a href="#">Catalysis and Catalytic Reactors</a></li>
+            <li class="topic-arr"><a href="#">Non-Isothermal Reactor Design: Steady-Stead Energy Balance</a></li>
+            <li class="topic-arr"><a href="#">Non-Isothermal Reactor Design: Steady-Stead Flow</a></li>
+            <li class="topic-arr"><a href="#">Non-Isothermal Reactor Design: Unsteady-Stead Energy Balance & Flow</a></li>
+            <li class="topic-arr"><a href="#">Mass Transfer Limitations in Reacting Systems</a></li>
+            <li class="topic-arr"><a href="#">Diffusion and Reaction</a></li>
+            <li class="topic-arr"><a href="#">Residence Time Distributions of Chemical Reactors</a></li>
+            <li class="topic-arr"><a href="#">Predicting Conversion Directly from the Residence Time Dist.</a></li>
+            <li class="topic-arr"><a href="#">Models for Non-Ideal Reactors</a></li>
+            <li class="topic-arr"><a href="#">Appendix</a></li>
+            </strike>
+        </ol>
+    </div>  
+</div>
+
+{% endblock content %}
+
+{% block sidebar %}
+
+<div class="content-section subject-topic-ann">
+    <div class="article-content">
+        <u><h2>Useful Links</h2></u>
+    </div>  
+</div>
+{% endblock %}
+
+{% block togglebtn %}
+<div class="content-section topic-buttons">
+    <table style="width: 100%; border: 1px; ">
+        <tr>
+            <td style="text-align: left;"><a href="{{url_for('subjects.subject_home', subject_name='cheme')}}"><button type="button" class="btn btn-primary">&#8592; Back</button></a></td>
+            <td style="text-align: center;"><a href="{{url_for('subjects.subject_home', subject_name='cheme')}}"><button type="button" class="btn btn-secondary">Home</button></a></td>
+            <td style="text-align: right;"><a href="{{url_for('subjects.topic_chapter', subject_name='cheme', topic_name='cre', chapter='chapter_1', num='1')}}"><button type="button" class="btn btn-primary">Next &#8594;</button></a></td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

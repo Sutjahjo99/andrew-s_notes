@@ -1,0 +1,138 @@
+{% extends "layout_subject.html" %}
+
+{% block content %}
+
+<div class="content-section mysec-cheme">
+    <div class="article-content">
+        <h3>Chapter 1: Mole Balance</h3>
+        <br>
+        <h5><u>1.2 General Mole Balance Equation</u></h5>
+
+        <p> 
+            Before performing any sorts mole balance on a system, it is important for the system to first be defined. The tool that
+            helps determine what a system is, is called a system boundary. The volume enclosed in the system boundary would be the 
+            system volume. Take a look at the image below:
+        </p>
+
+        <img class="topic-center-item img-size" src="{{ url_for('subjects.static', filename='images/cheme/cre/chap_1/1.2_1.png') }}" alt="Card image cap">
+        <br>
+        <p>
+            Where:
+            <ul class="topic-list">
+                <li>\(F_{j_o}\) is the flow rate of material \(j\) going <b>into</b> the system,</li>
+                <li>\(F_{j}\) is the flow rate of material \(j\) going <b>out</b> of the system,</li>
+                <li>\(G_{j}\) is the rate of material \(j\) being <b>generated</b> in the system.</li>
+            </ul>
+            
+            With all of that information, applying a general mole balance on the system volume would look like this:
+        </p>
+
+        <p class="topic-center-item topic-item-padding">\( F_{j_o} - F_{j} + G_{j} = \frac{dN_j}{dt} \)</p>
+        <p class="topic-center-item">or</p>
+        <p class="topic-center-item topic0item-padding">\( In - Out + Generation = Accumulation\)</p>
+
+        <p>
+            Where \(\frac{dN_j}{dt}\) is the accumulation rate of material \(j\) in the system. If all of the system variables are
+            spatially uniform throughout, we may present the generation rate, \(G_j\), as follows:
+        </p>
+
+        <p class="topic-center-item topic-item-padding">\( G_j = r_j \cdot V_{system}\)</p>
+
+        <p>
+            Where \(r_j\) is the rate of formation of \(j\) and \(V_{system}\) is the volume of the system. Suppose that the rate 
+            of formation, \(r_j\), varies at different positions in the system as such:
+        </p>
+
+        <img class="topic-center-item img-size" src="{{ url_for('subjects.static', filename='images/cheme/cre/chap_1/1.2_2.png') }}" alt="Card image cap">
+    
+        <p>
+            Where:
+            <ul class="topic-list">
+                <li>\(r_{j_1}\) is the rate of formation of material \(j\) at position 1,</li>
+                <li>\(r_{j_2}\) is the rate of formation of material \(j\) at position 2,</li>
+                <li>\(\Delta V_1\) is the sub-volume which corresponds to \(r_{j_1}\),</li>
+                <li>\(\Delta V_2\) is the sub-volume which corresponds to \(r_{j_2}\).</li>
+            </ul>
+            
+            Then we can define the rate of generation for positions 1 and 2 as:
+        </p>
+
+        <p class="topic-center-item topic-item-padding">\( \Delta G_{j_1} = r_{j_1} \cdot \Delta V_1 \)</p>
+        <p class="topic-center-item topic-item-padding">\( \Delta G_{j_2} = r_{j_2} \cdot \Delta V_2 \)</p>
+
+        <p>If the system volume is divided into n number of sub-volumes, we can then re-write the system generation rate, \(G_j\), as: </p>
+    
+        <p class="topic-center-item topic-item-padding">\[ G_{j} = \sum_{i=1}^{n} \Delta G_{ji} = \sum_{i=1}^{n} r_{ji} \cdot \Delta V_i \]</p>
+
+        <p>Taking things a step further, we can take the appropriate limits:</p>
+
+        <p class="topic-center-item topic-item-padding">\[ G_j = \lim_{(\Delta V, n)\to(0, \infty)} \sum_{i=1}^{n} r_{ji} \cdot \Delta V_i = \int^V r_j \cdot dV \]</p>
+    
+        <p>We can now substitute the <b>new generation rate</b> into our general mole balance equation to obtain our new mole balance equation:</p>
+    
+        <p class="topic-center-item topic-item-padding">\( F_{j_o} - F_{j} + G_{j} = \frac{dN_j}{dt} \)</p>
+        <p class="topic-center-item topic-item-padding">\( \downarrow \)</p>
+        <p class="topic-center-item topic-item-padding">\( F_{j_o} - F_{j} + \int^V r_j \cdot dV = \frac{dN_j}{dt} \)</p>
+
+        <p>
+            From here, we can develop <b>design equations</b> for industrial reactors such as:
+
+            <ul class="topic-list" list="square">
+                <li>Batch reactors</li>
+                <li>Semi-batch reactors</li>
+                <li>Continuous reactors</li>
+            </ul>
+
+            With the design equations, we will be able to determine the time (for batchr reactors) and the reactor volume (for continuous-flow) necessary
+            to convert a specified amount of reactants into products.
+        </p>
+    </div>  
+</div>
+
+{% endblock content %}
+
+{% block sidebar %}
+
+<div class="content-section subject-topic-ann" id="position-fixed">
+    <div class="article-content">
+        <h3>Quick Notes</h3>
+        <u>Equations Used</u>
+        <ul class="topic-equations" type="square">
+            <li> \( F_{j_o} - F_{j} + G_{j} = \frac{dN_j}{dt} \) </li>
+            <li> \( G_j = r_j \cdot V_{system} \) </li>
+            <li> \( G_{j} = \int^V r_j \cdot dV \)</li>
+        </ul>
+        <p></p>
+        <u>Standard Units</u>
+        <ul class="topic-equations" type="square">
+            <li> \( F_{j_o}, F_{j}, G_{j}, \frac{dN_j}{dt} = \frac{moles}{time} \) </li>
+            <li> \( r_j = \frac{moles}{volume \cdot time} \) </li>
+            <li> \( V = volume \) </li>
+        </ul>
+    </div>  
+</div>
+<!--
+<div class="content-section subject-topic-ann" id="position-fixed">
+    <div class="article-content">
+        <h3>Useful Links</h3>
+        <p></p>
+        <ul type="square">
+            <li style="padding-left: 10px;"></li>
+        </ul>
+
+    </div>  
+</div>
+-->
+{% endblock %}
+
+{% block togglebtn %}
+<div class="content-section topic-buttons">
+    <table style="width: 100%; border: 1px; ">
+        <tr>
+            <td style="text-align: left;"><a href="{{url_for('subjects.topic_chapter', subject_name='cheme', topic_name='cre', chapter='chapter_1', num='1')}}"><button type="button" class="btn btn-primary">&#8592; Back</button></a></td>
+            <td style="text-align: center;"><a href="{{url_for('subjects.subject_home', subject_name='cheme')}}"><button type="button" class="btn btn-secondary">Home</button></a></td>
+            <td style="text-align: right;"><a href="#"><button type="button" class="btn btn-primary"><strike>Next &#8594;</strike></button></a></td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
