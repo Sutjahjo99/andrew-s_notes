@@ -1,0 +1,134 @@
+{% extends "layout_subject.html" %}
+
+{% block content %}
+
+<div class="content-section mysec-cheme">
+    <div class="article-content">
+        <h3>Chapter 1: Mole Balance</h3>
+        <br>
+        <h5><u>1.3 Batch Reactors</u></h5>
+        <br>
+        <h6><u>General Information</u></h6>
+        <p> 
+            Batch reactors are 1 out of the 4 main reactors types used in industry. They are used for small-scale operations and
+            there are a few reasons why a batch reactor is chosen over a full-scale operation:
+            
+            <ul class="topic-list">
+                <li>A new process has just been developed</li>
+                <li>The product to be manufactured is expensive</li>
+                <li>The process is too difficult to convert into a continuous process</li>
+            </ul>
+
+            Here are some <u>advantages</u> to using a batch reactor:
+
+            <ul class="topic-list">
+                <li>High product conversions by leaving the reactants in the reactor for extended periods of time</li>
+                <li></li>
+            </ul>
+
+            As well as <u>disadvantages</u> using it:
+            
+            <ul class="topic-list">
+                <li>High labor cost per batch for the operators needed to control and overlook the process</li>
+                <li></li>
+            </ul>
+        </p>
+
+        <br>
+        <div class="dropdown-divider"></div>
+        <br>
+
+        <h6><u>Design Equation of a Batch Reactor</u></h6>
+
+        <p>
+            Let's discuss about the <b>mole balance in batch reactors</b>. A batch reactor does not have an inflow nor an outflow, which can 
+            be written as (\(F_{j_o} = F_j = 0\)). Hence, the resulting mole balance is:
+        </p>  
+        
+        <p class="topic-center-item topic-equations">\[ G_j = \frac{dN_j}{dt} \longrightarrow \frac{dN_j}{dt} = \int^V r_j \cdot dV \]</p>
+
+        <p> If the reaction mixture is perfectly mixed such that there are no variation in rate of reaction throughout the reactor volume,
+            we can integrate as follows:
+        </p>
+        
+        <p class="topic-center-item topic-equations">\[ \frac{dN_j}{dt} = r_j \cdot \int^V dV  = r_j \cdot V\]</p>
+
+        <p>If we take a simple example:</p>
+           
+        <p class="topic-center-item topic-equations">\(\ce{A -> B}\)</p>
+
+        <p>
+            As the reaction proceed, the number of moles of <b>A will decrease</b> and the number of moles of <b>B will increase</b>.
+            The mole vs. time trajectory will look as such:
+        </p>
+        
+        <img class="topic-center-item img-size" src="{{ url_for('subjects.static', filename='images/cheme/cre/chap_1/1.3_1.png') }}" alt="Card image cap">
+        
+        <p>
+            Where 
+            If we are trying to find out the number of moles of A at time \(t_1\), we can rearrange the mole balance equation for batch reactors
+            to get the follow:
+        </p>
+
+        <p class="topic-center-item topic-equations">\[ \frac{dN_A}{dt} = r_A \cdot V \longrightarrow dt = \frac{dN_A}{r_A \cdot V}\]</p>
+
+        <p>
+            Doing a simple integration with limits from \(t_0\) and \(t_1\), we can see that:
+        </p>
+
+        <p class="topic-center-item topic-equations">\[ t_1 - t_0 = \int_{N_{A_o}}^{N_{A_1}}{\frac{dN_A}{r_A \cdot V}} = \int_{N_{A_1}}^{N_{A_0}}{\frac{dN_A}{-r_A \cdot V}}\]</p>
+        
+        <p>
+            This is a the integral form of the mole balance on a batch reactor. This equation can be used to calculate how much time is needed
+            needed to reduce the number moles of A from time \(t_0\) to \(t_1\). 
+        </p>
+    </div>  
+</div>
+
+{% endblock content %}
+
+{% block sidebar %}
+
+<div class="content-section subject-topic-ann" id="position-fixed">
+    <div class="article-content">
+        <h3>Quick Notes</h3>
+        <u>Equations Used</u>
+        <ul class="topic-equations" type="square">
+            <li> \( F_{j_o} - F_{j} + G_{j} = \frac{dN_j}{dt} \) </li>
+            <li> \( G_j = r_j \cdot V_{system} \) </li>
+            <li> \( G_{j} = \int^V r_j \cdot dV \)</li>
+        </ul>
+        <p></p>
+        <u>Standard Units</u>
+        <ul class="topic-equations" type="square">
+            <li> \( F_{j_o}, F_{j}, G_{j}, \frac{dN_j}{dt} = \frac{moles}{time} \) </li>
+            <li> \( r_j = \frac{moles}{volume \cdot time} \) </li>
+            <li> \( V = volume \) </li>
+        </ul>
+    </div>  
+</div>
+<!--
+<div class="content-section subject-topic-ann" id="position-fixed">
+    <div class="article-content">
+        <h3>Useful Links</h3>
+        <p></p>
+        <ul type="square">
+            <li style="padding-left: 10px;"></li>
+        </ul>
+
+    </div>  
+</div>
+-->
+{% endblock %}
+
+{% block togglebtn %}
+<div class="content-section topic-buttons">
+    <table style="width: 100%; border: 1px; ">
+        <tr>
+            <td style="text-align: left;"><a href="{{url_for('subjects.topic_chapter', subject_name='cheme', topic_name='cre', chapter='chapter_1', num='2')}}"><button type="button" class="btn btn-primary">&#8592; Back</button></a></td>
+            <td style="text-align: center;"><a href="{{url_for('subjects.subject_home', subject_name='cheme')}}"><button type="button" class="btn btn-secondary">Home</button></a></td>
+            <td style="text-align: right;"><a href="{{url_for('subjects.topic_chapter', subject_name='cheme', topic_name='cre', chapter='chapter_1', num='4')}}"><button type="button" class="btn btn-primary">Next &#8594;</button></a></td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

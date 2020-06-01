@@ -1,0 +1,65 @@
+{% extends "layout_subject.html" %}
+
+{% block content %}
+
+<div class="content-section mysec-cheme">
+    <div class="article-content">
+        <h3>Chapter 1: Mole Balance</h3>
+        <br>
+        <h5><u>1.4 Continuous Flow Reactors</u></h5>
+        
+        <p> The next 3 reactor types goes under the continuous flow reactor category. We will discuss each of the reactor type in 
+            detail in the next few pages. There are:
+            <ul class="topic-list">
+                <li>Continuous-Stirred Tank Reactors (CSTRs)</li>
+                <li>Plug-Flow Reactors (PFRs)</li>
+                <li>Packed-Bed Reactors (PBRs)</li>
+            </ul>
+            Without furtherado, let's uncover what the major differences are!
+        </p>
+    </div>  
+</div>
+
+{% endblock content %}
+
+{% block sidebar %}
+
+<div class="content-section subject-topic-ann" id="position-fixed">
+    <div class="article-content">
+        <h3>Quick Notes</h3>
+        <u>Equations Used</u>
+        <ul class="topic-equations" type="square">
+            <li> N/A </li>
+        </ul>
+        <p></p>
+        <u>Standard Units</u>
+        <ul class="topic-equations" type="square">
+            <li> N/A </li>
+        </ul>
+    </div>  
+</div>
+<!--
+<div class="content-section subject-topic-ann" id="position-fixed">
+    <div class="article-content">
+        <h3>Useful Links</h3>
+        <p></p>
+        <ul type="square">
+            <li style="padding-left: 10px;"></li>
+        </ul>
+
+    </div>  
+</div>
+-->
+{% endblock %}
+
+{% block togglebtn %}
+<div class="content-section topic-buttons">
+    <table style="width: 100%; border: 1px; ">
+        <tr>
+            <td style="text-align: left;"><a href="{{url_for('subjects.topic_chapter', subject_name='cheme', topic_name='cre', chapter='chapter_1', num='3')}}"><button type="button" class="btn btn-primary">&#8592; Back</button></a></td>
+            <td style="text-align: center;"><a href="{{url_for('subjects.subject_home', subject_name='cheme')}}"><button type="button" class="btn btn-secondary">Home</button></a></td>
+            <td style="text-align: right;"><a href="{{url_for('subjects.topic_chapter', subject_name='cheme', topic_name='cre', chapter='chapter_1', num='5')}}"><button type="button" class="btn btn-primary">Next &#8594;</button></a></td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

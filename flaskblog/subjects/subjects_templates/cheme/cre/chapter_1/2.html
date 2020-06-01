@@ -9,13 +9,13 @@
         <h5><u>1.2 General Mole Balance Equation</u></h5>
 
         <p> 
-            Before performing any sorts mole balance on a system, it is important for the system to first be defined. The tool that
+            Before performing any sort of mole balance on a system, it is important for the system to first be defined. The tool that
             helps determine what a system is, is called a system boundary. The volume enclosed in the system boundary would be the 
             system volume. Take a look at the image below:
         </p>
 
         <img class="topic-center-item img-size" src="{{ url_for('subjects.static', filename='images/cheme/cre/chap_1/1.2_1.png') }}" alt="Card image cap">
-        <br>
+        
         <p>
             Where:
             <ul class="topic-list">
@@ -44,7 +44,7 @@
         </p>
 
         <img class="topic-center-item img-size" src="{{ url_for('subjects.static', filename='images/cheme/cre/chap_1/1.2_2.png') }}" alt="Card image cap">
-        <br>
+        
         <p>
             Where:
             <ul class="topic-list">
@@ -93,7 +93,7 @@
 
 {% block sidebar %}
 
-<div class="content-section subject-topic-ann" id="position-fixed">
+<div class="content-section subject-topic-ann">
     <div class="article-content">
         <h3>Quick Notes</h3>
         <u>Equations Used</u>
@@ -131,7 +131,7 @@
         <tr>
             <td style="text-align: left;"><a href="{{url_for('subjects.topic_chapter', subject_name='cheme', topic_name='cre', chapter='chapter_1', num='1')}}"><button type="button" class="btn btn-primary">&#8592; Back</button></a></td>
             <td style="text-align: center;"><a href="{{url_for('subjects.subject_home', subject_name='cheme')}}"><button type="button" class="btn btn-secondary">Home</button></a></td>
-            <td style="text-align: right;"><a href="#"><button type="button" class="btn btn-primary"><strike>Next &#8594;</strike></button></a></td>
+            <td style="text-align: right;"><a href="{{url_for('subjects.topic_chapter', subject_name='cheme', topic_name='cre', chapter='chapter_1', num='3')}}"><button type="button" class="btn btn-primary">Next &#8594;</button></a></td>
         </tr>
     </table>
 </div>
